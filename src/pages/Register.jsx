@@ -29,13 +29,13 @@ const Register = () => {
       </div>
 
       {/* Верхний логотип и онлайн статус */}
-      <div className="text-center mt-12 z-10">
+      <div className="text-center mt-12 z-10 flex flex-col justify-center items-center">
         <img
           src="/assets/logo.png"
           alt="Logo"
           className="mx-auto w-60 drop-shadow-md"
         />
-        <img src="/assets/mockup.png" className=" " alt="" />
+        <img src="/assets/mockup.png" className="w-[280px]" alt="" />
         <p className="text-[#90FFAD] text-sm mt-4 text-[11px]">
           • {t("register.online")}: {online}
         </p>

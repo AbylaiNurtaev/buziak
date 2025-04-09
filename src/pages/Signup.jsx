@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import GenderToggle from "../components/GenderToggle";
 import PasswordInput from "../components/PasswordInput";
@@ -8,6 +8,22 @@ function Signup() {
   const { t, i18n } = useTranslation();
 
   const navigate = useNavigate();
+  useEffect(() => {
+    fetch("http://localhost:5000/api/users/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: "Abylay",
+        phone: "12345",
+        email: "krutyev5@gmail.com",
+        password: "12345",
+        gender: "male",
+      }),
+    })
+      .then((res) => res.json())
+      .then(console.log)
+      .catch(console.error);
+  });
 
   return (
     <div className="bg-[#1B1B1B] min-h-screen flex flex-col items-center px-4 py-8 text-white">
@@ -20,7 +36,7 @@ function Signup() {
           <input
             type="text"
             placeholder={t("signup.name")}
-            className="bg-gray-100 rounded-md px-4 py-3 text-sm text-gray-700"
+            className="bg-gray-100 rounded-md px-4 py-3 text-[16px] text-gray-700"
           />
         </div>
 
@@ -28,7 +44,7 @@ function Signup() {
           <input
             type="text"
             placeholder={t("signup.phone")}
-            className="bg-gray-100 rounded-md px-4 py-3 text-sm text-gray-700"
+            className="bg-gray-100 rounded-md px-4 py-3 text-[16px] text-gray-700"
           />
         </div>
 
@@ -36,7 +52,7 @@ function Signup() {
           <input
             type="text"
             placeholder={t("signup.email")}
-            className="bg-gray-100 rounded-md px-4 py-3 text-sm text-gray-700"
+            className="bg-gray-100 rounded-md px-4 py-3 text-[16px] text-gray-700"
           />
         </div>
 
@@ -53,7 +69,10 @@ function Signup() {
         <GenderToggle />
 
         <div className="flex items-center gap-2 text-xs mt-4">
-          <input type="checkbox" className="w-6 h-6 shrink-0 mt-0.5" />
+          <input
+            type="checkbox"
+            className="w-6 h-6 shrink-0 mt-0.5 text-[16px]"
+          />
           <div
             onClick={() => navigate("/policy")}
             className="text-white leading-snug"

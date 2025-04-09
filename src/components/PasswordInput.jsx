@@ -9,7 +9,7 @@ export default function PasswordInput() {
         <input
           type={showPassword ? "text" : "password"}
           placeholder="Введите пароль"
-          className="bg-transparent outline-none text-sm text-gray-700 w-full"
+          className="bg-transparent outline-none text-[16px] text-gray-700 w-full"
         />
         <img
           src={showPassword ? "/icons/Hide2.svg" : "/icons/Hide.svg"}

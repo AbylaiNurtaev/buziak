@@ -4,6 +4,20 @@
       "button_start": "Zacznij teraz",
       "button_login": "Zaloguj się",
       "online": "Online:"
+    },
+    "signup": {
+      "title": "Zarejestruj się",
+      "name": "Wpisz imię",
+      "phone": "Wpisz numer telefonu",
+      "email": "Wpisz adres e-mail",
+      "man": "Jestem mężczyzną",
+      "girl": "Jestem dziewczyną",
+      "password": "Wpisz hasło",
+      "checkbox": "Akceptuję regulamin i politykę prywatności",
+      "submit": "Zarejestruj się",
+      "have_account": "Masz już konto? <span style='color:#006ae5'>Zaloguj się</span>",
+      "policy": "Akceptuję <span style='text-decoration: underline;'>Regulamin i Politykę Prywatności</span>"
+
     }
   }
   

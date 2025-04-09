@@ -1,10 +1,12 @@
 import { useTranslation, Trans } from "react-i18next";
 import { useFakeOnline } from "../hooks/useFakeOnline";
+import { useNavigate } from "react-router-dom";
 const Register = () => {
   const { t, i18n } = useTranslation();
   const tr = t("register", { returnObjects: true });
   const online = useFakeOnline();
 
+  const navigate = useNavigate()
   return (
     <div
       className="w-full h-screen bg-cover bg-center text-white relative overflow-hidden flex flex-col justify-start"
@@ -51,7 +53,7 @@ const Register = () => {
 
       {/* Кнопки */}
       <div className="mt-6 px-6 mb-10 flex flex-col gap-4 z-10">
-        <button className="bg-[#F7B93F] text-white font-medium py-3 rounded-md shadow">
+        <button className="bg-[#F7B93F] text-white font-medium py-3 rounded-md shadow" onClick={() => navigate('/signup')}>
           {tr.button_start}
         </button>
         <button className="bg-[#BC8D32] text-white font-medium py-3 rounded-md shadow">
